@@ -1,0 +1,107 @@
+------------------------------------------------------------------------
+r1491420 | viacheslav.vdovenko | 2015-07-13 16:00:35 +0100 (Mon, 13 Jul 2015) | 1 line
+Changed paths:
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/clients/common/mvn-manifest/AndroidManifest.xml
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/clients/syncdrive/res/values/booleans.xml
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/libs/model/build.gradle
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/libs/model/res/values/booleans.xml
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/libs/model/src/com/newbay/syncdrive/android/model/configuration/ApiConfigManager.java
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/libs/model/src/com/newbay/syncdrive/android/model/util/sync/SyncConfigurationPrefHelper.java
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/libs/model/test/com/newbay/syncdrive/android/model/configuration/ApiConfigManagerTest.java
+   D /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/libs/ui/res/layout/tv_login.xml
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/libs/ui/res/values/strings.xml
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/libs/ui/src/com/newbay/syncdrive/android/ui/application/SyncDriveModule.java
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/libs/ui/src/com/newbay/syncdrive/android/ui/description/visitor/DescriptionFilesVisitor.java
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/libs/ui/src/com/newbay/syncdrive/android/ui/description/visitor/DescriptionFilesVisitorFactoryImpl.java
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/libs/ui/src/com/newbay/syncdrive/android/ui/gui/activities/ContactsActivity.java
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/libs/ui/src/com/newbay/syncdrive/android/ui/gui/activities/ContactsViewPager.java
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/libs/ui/src/com/newbay/syncdrive/android/ui/gui/activities/GridActivity.java
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/libs/ui/src/com/newbay/syncdrive/android/ui/gui/activities/GridListViewPager.java
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/libs/ui/src/com/newbay/syncdrive/android/ui/gui/activities/GroupsContactsListActivity.java
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/libs/ui/src/com/newbay/syncdrive/android/ui/gui/activities/PictureViewActivity.java
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/libs/ui/src/com/newbay/syncdrive/android/ui/gui/activities/SplashConnectingActivity.java
+   D /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/libs/ui/src/com/newbay/syncdrive/android/ui/gui/activities/TvAuthActivity.java
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/libs/ui/src/com/newbay/syncdrive/android/ui/gui/activities/VideoViewActivity.java
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/libs/ui/src/com/newbay/syncdrive/android/ui/gui/fragments/DataViewFragment.java
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/libs/ui/src/com/newbay/syncdrive/android/ui/gui/fragments/SlidingMenuFragment.java
+
+Removed old TV functionality
+------------------------------------------------------------------------
+r1491333 | robert.hanaway | 2015-07-13 13:59:14 +0100 (Mon, 13 Jul 2015) | 1 line
+Changed paths:
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/libs/ui/src/com/newbay/syncdrive/android/ui/atp/AtpAuthActivity.java
+
+directed the auth callback to point at the AtpAuthActivity class
+------------------------------------------------------------------------
+r1491323 | robert.hanaway | 2015-07-13 13:48:50 +0100 (Mon, 13 Jul 2015) | 1 line
+Changed paths:
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/clients/syncdrive-att/build-config/prod.properties
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/libs/ui/src/com/newbay/syncdrive/android/ui/atp/AtpAuthActivity.java
+
+Added application identifier to auth call
+------------------------------------------------------------------------
+r1491315 | robert.hanaway | 2015-07-13 13:06:21 +0100 (Mon, 13 Jul 2015) | 1 line
+Changed paths:
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/build.gradle
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/libs/ui/build.gradle
+   A /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/libs/ui/res/layout/atp_web_auth.xml
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/libs/ui/src/com/newbay/syncdrive/android/ui/atp/AbstractAtpAuthActivity.java
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/libs/ui/src/com/newbay/syncdrive/android/ui/atp/AtpAuthActivity.java
+
+Added web UI for auth
+------------------------------------------------------------------------
+r1491272 | viacheslav.vdovenko | 2015-07-13 11:52:09 +0100 (Mon, 13 Jul 2015) | 1 line
+Changed paths:
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/clients/syncdrive-att
+
+Added ignorance
+------------------------------------------------------------------------
+r1491254 | apat0004 | 2015-07-13 11:32:02 +0100 (Mon, 13 Jul 2015) | 1 line
+Changed paths:
+   A /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/clients/syncdrive-att/res/drawable-hdpi/ic_launcher.png
+   D /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/clients/syncdrive-att/res/drawable-hdpi/icon.png
+   A /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/clients/syncdrive-att/res/drawable-ldpi/ic_launcher.png
+   D /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/clients/syncdrive-att/res/drawable-ldpi/icon.png
+   A /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/clients/syncdrive-att/res/drawable-mdpi/ic_launcher.png
+   D /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/clients/syncdrive-att/res/drawable-mdpi/icon.png
+   A /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/clients/syncdrive-att/res/drawable-xhdpi/ic_launcher.png
+   D /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/clients/syncdrive-att/res/drawable-xhdpi/icon.png
+   A /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/clients/syncdrive-att/res/drawable-xxhdpi/ic_launcher.png
+   D /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/clients/syncdrive-att/res/drawable-xxhdpi/icon.png
+   A /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/clients/syncdrive-att/res/drawable-xxxhdpi/ic_launcher.png
+   D /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/clients/syncdrive-att/res/drawable-xxxhdpi/icon.png
+
+icon renamed as ic_launcher.png
+------------------------------------------------------------------------
+r1491229 | robert.hanaway | 2015-07-13 11:03:48 +0100 (Mon, 13 Jul 2015) | 1 line
+Changed paths:
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/clients/common/mvn-config/res/values/environment.xml
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/clients/mct/build-config/prod.properties
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/clients/mct/build-config/prod_lowbandwidth.properties
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/clients/mct/build-config/qa.properties
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/clients/mct/build-config/qa_lowbandwidth.properties
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/clients/mct/build-config/voucher.properties
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/clients/mct-att/build-config/dev.properties
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/clients/mct-att/build-config/prod.properties
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/clients/mct-att/build-config/qa.properties
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/clients/syncdrive/build-config/dev.properties
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/clients/syncdrive/build-config/prod.properties
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/clients/syncdrive/build-config/prod_homescreen.properties
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/clients/syncdrive/build-config/prod_homescreensettings.properties
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/clients/syncdrive/build-config/prod_integrated.properties
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/clients/syncdrive/build-config/qa.properties
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/clients/syncdrive/build-config/qa_homescreen.properties
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/clients/syncdrive/build-config/qa_homescreensettings.properties
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/clients/syncdrive/build-config/qa_integrated.properties
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/clients/syncdrive-att/build-config/prod.properties
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/libs/ui/res/values/configurations.xml
+
+Added configuration for web auth, plan management and logout
+------------------------------------------------------------------------
+r1491146 | viacheslav.vdovenko | 2015-07-13 09:21:48 +0100 (Mon, 13 Jul 2015) | 1 line
+Changed paths:
+   D /cloud/personal/syncdrive-international/android/branches/15-2-solutions
+   A /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions (from /cloud/personal/syncdrive-international/android/branches/15-2-solutions:1491145)
+
+Rename folder
+------------------------------------------------------------------------
