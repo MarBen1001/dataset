@@ -1,4 +1,35 @@
 ------------------------------------------------------------------------
+r1547493 | vnai0001 | 2015-11-19 06:31:05 +0000 (Thu, 19 Nov 2015) | 4 lines
+Changed paths:
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/libs/ui/src/com/newbay/syncdrive/android/ui/nab/model/DataClass.java
+
+FTRPC-304 : Frontier - Default Backups Settings to be ON
+---------------
++Instant upload for Contacts and Photos will be ON.
+
+------------------------------------------------------------------------
+r1546917 | vnai0001 | 2015-11-18 09:06:34 +0000 (Wed, 18 Nov 2015) | 3 lines
+Changed paths:
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/clients/syncdrive-frt/res/values/booleans.xml
+
+FTRPC-336 : Frontier Android || TV beaming option does not appear inspite of cast receivers available
+-----------
+chrome_cast_support_feature= true. enabled on Frontier.
+------------------------------------------------------------------------
+r1546493 | /OU=Domain Control Validated/CN=svn.synchronoss.net | 2015-11-17 15:38:50 +0000 (Tue, 17 Nov 2015) | 1 line
+Changed paths:
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/version.properties
+
+[gradle-release] prepare for next development iteration
+------------------------------------------------------------------------
+r1546460 | vnai0001 | 2015-11-17 14:56:49 +0000 (Tue, 17 Nov 2015) | 3 lines
+Changed paths:
+   M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/clients/syncdrive-frt/build-config/prod.properties
+
+FTRPC-416 : [FTR Android Client]Android Prod Build is pointed to API server
+-------------
+reverted changes of Revision: 1545628
+------------------------------------------------------------------------
 r1491420 | viacheslav.vdovenko | 2015-07-13 16:00:35 +0100 (Mon, 13 Jul 2015) | 1 line
 Changed paths:
    M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/clients/common/mvn-manifest/AndroidManifest.xml
@@ -97,7 +128,7 @@ Changed paths:
    M /cloud/personal/syncdrive-international/android/branches/android-15.2-solutions/libs/ui/res/values/configurations.xml
 
 Added configuration for web auth, plan management and logout
-------------------------------------------------------------------------
+------------------------------------------------------------------------commit
 r1491146 | viacheslav.vdovenko | 2015-07-13 09:21:48 +0100 (Mon, 13 Jul 2015) | 1 line
 Changed paths:
    D /cloud/personal/syncdrive-international/android/branches/15-2-solutions
