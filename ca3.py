@@ -1,8 +1,11 @@
 
 #######           Mary Hennessy        10345121    CA 3      ########
 
-################  Program to examine the detail in 5000 line report on 'Commits' made during a Project  ######################
-
+################  Program to examine the detail in 5000 line report on 'Commits' made during a Project           ###################
+################  returns (i) a synopsis per commit of each of 422 commits including ref, author, date, time,    ###################
+################  hour, weekday, month (ii) full list of commit comments with ref and date ordered by date -     ###################
+################  I've stopped at printing first 10 on line 148 for output neatness (iii) commits by timeframe,  ###################
+################  person and jobs within each commit
 
 class Commit(object):
 
@@ -38,7 +41,8 @@ class Commit(object):
         self.comments =[]
         self.comments_date =[]
         self.no_comments =[]
-    
+        self.months =[]
+        self.month_d ={}
     
         while True:
             try:                                #IndexError: list index out of range if don't go for try/except guard as per example
@@ -53,9 +57,9 @@ class Commit(object):
                 commit.author = details[1].strip()
                 commit.date = details[2].strip().split(' ')[0]
                 commit.time = details[2].strip().split(' ')[1]
-                commit.hour = details[2].strip().split(' ')[1].strip().split(':')[0]  #int required for further down
+                commit.hour = details[2].strip().split(' ')[1].strip().split(':')[0]  #required for further down
                 commit.weekday = details[2].strip().split(' ')[3].strip().strip('(').strip(',').strip(')')
-                commit.month =  details[2].strip().split(' ')[5].strip()#.strip('(').strip(',').strip(')')
+                commit.month =  details[2].strip().split(' ')[5].strip()
         
                 commit.comment_line_count = int(details[3].strip().split(' ')[0])
                 print commit.comment_line_count
@@ -64,14 +68,10 @@ class Commit(object):
                 commit_comment = data[index-commit.comment_line_count:index]
                 comment_date = commit.date
                 print commit_comment
-            
-                if not commit_comment == '' or not commit_comment ==' ':    #don't append blank comments
-                    self.comments.append((comment_date,commit_comment))
+                self.comments.append((comment_date,commit.ref,commit_comment)) #list of uncommented commits
                 
-                else:
-                    self.no_comments.append(comment_date)                        #list of uncommented commits
-    
-                #print details
+                
+                #print relevant details of each commit record
                 print 'AUTHOR:',commit.author
                 print 'REFERENCE:', commit.ref
                 print 'COMMIT DATE:', commit.date
@@ -94,6 +94,11 @@ class Commit(object):
                 self.weekdays.append(commit.weekday)
                 self.weekday_d[commit.weekday] = self.weekday_d.get(commit.weekday,0)+1       # counts and divides 'commit_weekday's by number commits by day of week
            
+                #sorting month
+                self.months.append(commit.month)
+                self.month_d[commit.month] = self.month_d.get(commit.month,0)+1 
+                
+                
                 #sorting people
                 self.authors.append(commit.author)
                 self.authors_d[commit.author] = self.authors_d.get(commit.author,0)+1
@@ -135,14 +140,16 @@ class Commit(object):
             
     def sort_print_data(self):
         print  '______________________________________________________\n'
-        print  '            PROJECT COMMENTs by DATE'
+        print  '            PROJECT COMMENTs by DATE and REF number'
         print  '______________________________________________________'
 
         self.comments.sort(reverse=True)                 # print most recent comments first
-   
-        for i in self.comments :                         # list each comment separately
-            print i
- 
+        
+
+        for i in self.comments[:10] :                         # list each comment separately with date and ref
+            print i                                           # limiting to comments 0-9 here for neatness of output
+
+        
         print self.no_comments
         print  '______________________________________________________\n'
         print  '            PROJECT STATISTICS'
@@ -155,14 +162,14 @@ class Commit(object):
         for i in self.distinct_dates:
             distinct_date_count = float(distinct_date_count +1)
  
-        print '     COMMITS by HOUR of DAY\n'
+        print '         COMMITS by HOUR of DAY\n'
         self.num_by_hour_l =[]                  # returns commits by hour of day 
         self.hour_l =[]
         for key,value in self.hours_d.items():
             self.hour_l.append((key,value))
         self.hour_l.sort()
         for key,value in self.hour_l:
-            print '      Hour of Day:',key, ':commits:' ,value,'(',round((value/self.total_commits)*100,2),'%)'
+            print '         Hour of Day:',key, ':commits:' ,value,'(',round((value/self.total_commits)*100,2),'%)'
 
         for key,value in self.hours_d.items():
             self.num_by_hour_l.append((value,key))
@@ -174,7 +181,7 @@ class Commit(object):
 
         print '_______________________________________________________\n'
     
-        print '      COMMITS by DAY of WEEK\n'
+        print '         COMMITS by DAY of WEEK\n'
         self.num_by_weekday_l=[]                # returns number of commits by weekday
         self.weekday_l =[]
         for key,value in self.weekday_d.items():
@@ -184,9 +191,19 @@ class Commit(object):
         busiest_day = self.weekday_l[0]
     
         for value,key in self.weekday_l:
-            print '     ',key,value, '(',round((value/self.total_commits)*100,2),'%)'
+            print '        ',key,value, '(',round((value/self.total_commits)*100,2),'%)'
             
         print '      busiest day of the week was:', busiest_day [1] ,': in total', busiest_day [0],'commits happened on',busiest_day [1]+"rsday's"
+        print '_______________________________________________________\n'
+    
+        print '      COMMITS by MONTH: July to November 2015 \n'
+ 
+        months =[]
+        for key, value in self.month_d.items():
+            months.append((value,key))
+        months.sort(reverse = True)              # month with most commits on top
+        for value,key in months:
+            print '         (',round((value/self.total_commits)*100,2),'%)',key,value
         print '_______________________________________________________\n'
     
         print '      COMMITS per PERSON \n'
@@ -194,18 +211,18 @@ class Commit(object):
         authors =[]
         for key,value in self.authors_d.items():
             authors.append((value,key))
-        authors.sort(reverse = True)           #busiest commit person on this project at the top
+        authors.sort(reverse = True)                                #busiest commit person on this project at the top
         for value, key in authors:
-            print '     ',key, value
+            print '        ('+str(round(((value/self.total_commits)*100),2))+')%' ,key, value  # print % first then name and number commits for neatness
         busiest_committer =authors[0]
         print '     Person with most commits on this project is',busiest_committer[1], 'with a total of', busiest_committer[0],'commits'
     
 
         print '______________________________________________________\n'
    
-        print '      Total number of commits:',self.num_commits  
-        print '      Total no. of project days =',distinct_date_count
-        print '      Average number of commits per day =', round(self.num_commits/distinct_date_count,2)
+        print '        Total number of commits:',self.total_commits  
+        print '        Total no. of project days =',distinct_date_count
+        print '        Average number of commits per day =', round(self.total_commits/distinct_date_count,2)
 
         print '______________________________________________________\n'
         print '      JOBS by proportion/type carried out in COMMITs\n'
@@ -233,18 +250,12 @@ if __name__ =='__main__':
     
     commit = Commit()
     
-    changes_file = 'mini.txt'
+    changes_file = 'changes_python.txt'
     data =[line.strip() for line in open(changes_file)]
-    #print data
-    #print len(data)
 
-    
     commit.prepare_data()
 
-    
-        #for i in changes:
-        #   count =count+1
-        #print 'count ='  ,  count
+
 
 
 
